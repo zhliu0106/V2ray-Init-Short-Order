@@ -5,8 +5,8 @@ bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/
 wget https://raw.githubusercontent.com/zhliu0106/v2ray-config/main/config.json  -O -> /usr/local/etc/v2ray/config.json
 
 # 随机初始化123与456端口的shadowsocks密码
-pw_123="openssl rand -hex 4"
-pw_456="openssl rand -hex 4"
+pw_123=$(openssl rand -hex 4)
+pw_456=$(openssl rand -hex 4)
 
 sed -i "s/pw_123/$pw_123/g" /usr/local/etc/v2ray/config.json
 sed -i "s/pw_456/$pw_456/g" /usr/locab/etc/v2ray/config.json
