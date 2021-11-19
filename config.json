@@ -1,24 +1,21 @@
 {
     "inbounds": [
       {
-      "port": 123,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "7966c347-b5f5-46a0-b720-ef2d76e1836a",
-            "level": 1,
-            "alterId": 64
-          }
-        ]
-      }
-    },
-      {
-        "port": 321,
+        "port": 123,
         "protocol": "shadowsocks",
         "settings": {
           "method": "aes-256-gcm",
-          "password": "123456",
+          "password": "pw_123",
+          "network": "tcp,udp",
+          "level": 0
+        }
+     },
+      {
+        "port": 456,
+        "protocol": "shadowsocks",
+        "settings": {
+          "method": "aes-256-gcm",
+          "password": "pw_456",
           "network": "tcp,udp",
           "level": 0
         }
