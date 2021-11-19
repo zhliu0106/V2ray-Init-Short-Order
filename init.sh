@@ -21,6 +21,6 @@ wget https://raw.githubusercontent.com/zhliu0106/v2ray-config/main/sysctl.conf -
 service v2ray restart
 
 # 输出端口密码
-echo "protocol:\tshadowsocks\nmethod:\taes-256-gcm\n"
-echo "port:\t123\tpassword:\t$pw_123\n"
-echo "port:\t456\tpassword:\t$pw_456\n"
+echo -e "protocol:shadowsocks\nmethod:aes-256-gcm\n"
+echo -e "port:123\tpassword:$pw_123\n"
+echo -e "port:456\tpassword:$pw_456\n"
