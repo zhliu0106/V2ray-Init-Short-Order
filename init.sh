@@ -18,7 +18,7 @@ port_123=$(rand 1001 2000)
 port_456=$(rand 2001 3000)
 
 sed -i "s/pw_123/$pw_123/g" /usr/local/etc/v2ray/config.json
-sed -i "s/pw_456/$pw_456/g" /usr/locab/etc/v2ray/config.json
+sed -i "s/pw_456/$pw_456/g" /usr/local/etc/v2ray/config.json
 sed -i "s/port_123/$port_123/g" /usr/local/etc/v2ray/config.json
 sed -i "s/port_456/$port_456/g" /usr/local/etc/v2ray/config.json
 
