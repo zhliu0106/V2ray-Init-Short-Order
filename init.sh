@@ -1,3 +1,7 @@
+# Debug "could not get lock /var/lib/dpkg/lock-frontend"
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/lib/dpkg/lock
+
 # 安装v2ray
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 
