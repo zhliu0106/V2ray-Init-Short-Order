@@ -37,6 +37,6 @@ wget https://raw.githubusercontent.com/zhliu0106/v2ray-config/main/sysctl.conf -
 service v2ray restart
 
 # 输出端口密码
-echo -e "protocol:SOCKS5\n"
-echo -e "port:$port_123\tusername:$usr_123\tpassword:$pw_123\n"
-echo -e "port:$port_456\tusername:$usr_456\tpassword:$pw_456\n"
+echo -e "protocol:SOCKS5"
+echo -e "port:$port_123\tusername:$usr_123\tpassword:$pw_123"
+echo -e "port:$port_456\tusername:$usr_456\tpassword:$pw_456"
