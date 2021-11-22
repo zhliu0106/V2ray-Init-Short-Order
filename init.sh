@@ -12,13 +12,17 @@ function rand(){
   echo $(($num%$max+$min))
 }
 
+usr_123=$(openssl rand -hex 4)
+usr_456=$(openssl rand -hex 4)
 pw_123=$(openssl rand -hex 4)
 pw_456=$(openssl rand -hex 4)
 port_123=$(rand 1001 2000)
 port_456=$(rand 2001 3000)
 
-sed -i "s/pw_123/$pw_123/g" /usr/local/etc/v2ray/config.json
-sed -i "s/pw_456/$pw_456/g" /usr/local/etc/v2ray/config.json
+sed -i "s/username_123/$usr_123/g" /usr/local/etc/v2ray/config.json
+sed -i "s/username_456/$usr_456/g" /usr/local/etc/v2ray/config.json
+sed -i "s/password_123/$pw_123/g" /usr/local/etc/v2ray/config.json
+sed -i "s/password_456/$pw_456/g" /usr/local/etc/v2ray/config.json
 sed -i "s/port_123/$port_123/g" /usr/local/etc/v2ray/config.json
 sed -i "s/port_456/$port_456/g" /usr/local/etc/v2ray/config.json
 
@@ -33,6 +37,6 @@ wget https://raw.githubusercontent.com/zhliu0106/v2ray-config/main/sysctl.conf -
 service v2ray restart
 
 # 输出端口密码
-echo -e "protocol:shadowsocks\nmethod:aes-256-gcm\n"
-echo -e "port:$port_123\tpassword:$pw_123\n"
-echo -e "port:$port_456\tpassword:$pw_456\n"
+echo -e "protocol:SOCKS5\n"
+echo -e "port:$port_123\tusername:$usr_123\tpassword:$pw_123\n"
+echo -e "port:$port_456\tusername:$usr_456\tpassword:$pw_456\n"

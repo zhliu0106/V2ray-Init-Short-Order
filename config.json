@@ -1,41 +1,58 @@
 {
-    "inbounds": [
-      {
-        "port": port_123,
-        "protocol": "shadowsocks",
-        "settings": {
-          "method": "aes-256-gcm",
-          "password": "pw_123",
-          "network": "tcp,udp",
-          "level": 0
-        }
-     },
-      {
-        "port": port_456,
-        "protocol": "shadowsocks",
-        "settings": {
-          "method": "aes-256-gcm",
-          "password": "pw_456",
-          "network": "tcp,udp",
-          "level": 0
-        }
-     }
+  "inbounds": [
+    {
+      "port": port_123,
+      "protocol": "socks",
+      "settings": {
+        "auth": "password",
+        "accounts": [
+          {
+            "user": "username_123",
+            "pass": "password_123"
+          }
+        ],
+        "udp": false,
+        "ip": "127.0.0.1",
+        "userLevel": 0
+      }
+    },
+    {
+      "port": port_456,
+      "protocol": "socks",
+      "settings": {
+        "auth": "password",
+        "accounts": [
+          {
+            "user": "username_456",
+            "pass": "password_456"
+          }
+        ],
+        "udp": false,
+        "ip": "127.0.0.1",
+        "userLevel": 0
+      }
+    }
   ],
-    "outbounds": [{
+  "outbounds": [
+    {
       "protocol": "freedom",
       "settings": {}
-    },{
+    },
+    {
       "protocol": "blackhole",
       "settings": {},
       "tag": "blocked"
-    }],
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "ip": ["geoip:private"],
-          "outboundTag": "blocked"
-        }
-      ]
     }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
   }
+}
