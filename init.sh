@@ -36,7 +36,12 @@ wget https://raw.githubusercontent.com/zhliu0106/v2ray-config/main/sysctl.conf -
 # 重启
 service v2ray restart
 
+# 获取公网ip相关信息
+curl ipinfo.io > test
+# 使用正则表达式提取ip
+myip=$(grep -E '"ip": "(.*)"' test | cut -d \" -f 4)
+
 # 输出端口密码
-echo -e "protocol:SOCKS5"
-echo -e "port:$port_123\tusername:$usr_123\tpassword:$pw_123"
-echo -e "port:$port_456\tusername:$usr_456\tpassword:$pw_456"
+echo "$myip/$port_123/$usr_123/$pw_123"
+echo "$myip/$port_456/$usr_456/$pw_456"
+
