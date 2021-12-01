@@ -31,7 +31,7 @@ sed -i "s/port_456/$port_456/g" /usr/local/etc/v2ray/config.json
 /usr/local/bin/v2ray -test -config /usr/local/etc/v2ray/config.json
 
 # 配置BBR
-wget https://raw.githubusercontent.com/zhliu0106/v2ray-config/main/sysctl.conf -O -> /etc/sysctl.conf
+wget https://raw.githubusercontent.com/zhliu0106/V2ray-Init-Short-Order/main/sysctl.conf -O -> /etc/sysctl.conf
 
 # 重启
 service v2ray restart
