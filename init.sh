@@ -43,6 +43,6 @@ curl ipinfo.io > test
 myip=$(grep -E '"ip": "(.*)"' test | cut -d \" -f 4)
 
 # 输出端口密码
-echo "$myip/$port_123/$usr_123/$pw_123"
-echo "$myip/$port_456/$usr_456/$pw_456"
+echo "$myip/$port_123/$usr_123/$pw_123/"
+echo "$myip/$port_456/$usr_456/$pw_456/"
 
