@@ -34,7 +34,8 @@ sed -i "s/port_456/$port_456/g" /usr/local/etc/v2ray/config.json
 wget https://raw.githubusercontent.com/zhliu0106/V2ray-Init-Short-Order/main/sysctl.conf -O -> /etc/sysctl.conf
 
 # 重启
-service v2ray restart
+sudo systemctl restart v2ray
+sudo systemctl enable v2ray
 
 # 获取公网ip相关信息
 curl ipinfo.io > test
